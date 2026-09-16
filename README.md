@@ -1,25 +1,25 @@
 # COCSIT College Website
 
-A modern and responsive college website developed for **COCSIT (College of Computer Science and Information Technology)** using HTML, CSS, Bootstrap, and JavaScript.
+A modern and responsive college website developed for **COCSIT (College of Computer Science and Information Technology)** using **HTML, CSS, Bootstrap, and JavaScript**.
 
 ## 📌 About the Project
 
-The COCSIT College Website is designed to provide students, teachers, and visitors with useful information about the college, courses, placements, events, student activities, and other college-related information.
+The COCSIT College Website is designed to provide students, teachers, and visitors with useful information about the college, courses, placements, events, student activities, career opportunities, and other college-related information.
 
 ## 🚀 Features
 
-* 🏠 Home page
+* 🏠 Home Page
 * 🏫 About College
-* 🎓 Undergraduate and Postgraduate courses
-* 💼 Placement information
-* 👨‍🎓 Student information
-* 🎉 College events
-* 🏢 Company information
-* 📸 Event and college photo galleries
-* 💼 Career information
-* 📞 Contact page
-* 📱 Responsive design
-* 🌐 User-friendly navigation
+* 🎓 Undergraduate and Postgraduate Courses
+* 💼 Placement Information
+* 👨‍🎓 Student Information
+* 🎉 College Events
+* 🏢 Company Information
+* 📸 Event and College Photo Galleries
+* 💼 Career Information
+* 📞 Contact Page
+* 📱 Responsive Design
+* 🌐 User-Friendly Navigation
 
 ## 🛠️ Technologies Used
 
@@ -30,11 +30,11 @@ The COCSIT College Website is designed to provide students, teachers, and visito
 
 ## 📂 Project Structure
 
+```text
 Cocsit_College_Website/
 │
 ├── images/
-│   ├── placement/
-│   ├── event/
+│   ├── Event/
 │   ├── company_logo/
 │   ├── place_student/
 │   └── shivjayanti/
@@ -68,10 +68,9 @@ Cocsit_College_Website/
 
 The project contains separate folders for organizing website images:
 
-* `placement/` – Placement-related images
-* `event/` – College event images
+* `Event/` – College event images
 * `company_logo/` – Company logos
-* `place_student/` – Placement/student images
+* `place_student/` – Student and placement-related images
 * `shivjayanti/` – Shiv Jayanti event images
 
 ## 💻 How to Run the Project
@@ -93,7 +92,8 @@ BCA Graduate | Python Developer
 
 ## 📌 Repository
 
-**GitHub Repository:**
+GitHub Repository:
+
 https://github.com/shivamwaghmare123/Cocsit_College_Website
 
 ---
