@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Opportunities - COCSIT</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --navy: #020617;
+            --text: #0f172a;
+            --muted: #64748b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(2, 6, 23, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff !important;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            color: #cbd5e1 !important;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-left: 5px;
+            padding: 9px 13px !important;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #fff !important;
+            background: rgba(37, 99, 235, 0.2);
+        }
+
+        .dropdown-menu {
+            border: 0;
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
+        }
+
+        .dropdown-item {
+            border-radius: 8px;
+            padding: 9px 14px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .career-hero {
+            position: relative;
+            min-height: 470px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(2, 6, 23, 0.90),
+                    rgba(2, 6, 23, 0.58),
+                    rgba(2, 6, 23, 0.35)
+                ),
+                url("carrerwh2.jpg") center center / cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .career-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                transparent 60%,
+                rgba(2, 6, 23, 0.45)
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            color: #fff;
+            padding: 70px 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(37, 99, 235, 0.18);
+            border: 1px solid rgba(147, 197, 253, 0.35);
+            color: #bfdbfe;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.08;
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .hero-content h1 span {
+            color: #60a5fa;
+        }
+
+        .hero-content p {
+            color: #e2e8f0;
+            font-size: 1.08rem;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            color: #fff;
+            border: 1px solid var(--primary);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.55);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-outline-custom:hover {
+            background: #fff;
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           SCROLLING MESSAGE
+        ========================= */
+
+        .career-marquee {
+            background: #eff6ff;
+            border-bottom: 1px solid #dbeafe;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 15px 0;
+        }
+
+        .scroll-text {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-left: 100%;
+    animation: scroll-left 18s linear infinite;
+}
+
+.scroll-text i {
+    color: #f59e0b;
+}
+
+.scroll-text span {
+    color: #64748b;
+}
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           CAREER INTRO
+        ========================= */
+
+        .career-intro-image {
+            width: 100%;
+            height: 100%;
+            min-height: 390px;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+        }
+
+        .intro-content {
+            padding: 10px 0 10px 25px;
+        }
+
+        .intro-content h2 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .intro-content h2 span {
+            color: var(--primary);
+        }
+
+        .intro-content p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .career-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .career-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .career-list i {
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-top: 3px;
+        }
+
+        /* =========================
+           FEATURE CARDS
+        ========================= */
+
+        .feature-card {
+            height: 100%;
+            padding: 30px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-7px);
+            border-color: #bfdbfe;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .feature-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 14px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+            font-size: 0.92rem;
+            margin: 0;
+        }
+
+        /* =========================
+           JOB OPENINGS
+        ========================= */
+
+        .job-card {
+            height: 100%;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px;
+            transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        .job-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.10);
+        }
+
+        .job-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 12px;
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+        }
+
+        .job-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .job-detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .job-detail i {
+            color: var(--primary);
+            width: 18px;
+        }
+
+        .job-card .btn {
+            margin-top: 15px;
+            border-radius: 9px;
+            padding: 10px 18px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           RESUME FORM
+        ========================= */
+
+        .resume-wrapper {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+        }
+
+        .resume-info {
+            background: #eff6ff;
+            border-radius: 16px;
+            padding: 28px;
+            height: 100%;
+        }
+
+        .resume-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .resume-info p {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .resume-info ul {
+            padding-left: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .resume-info li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .resume-info i {
+            color: var(--primary);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 7px;
+        }
+
+        .form-control {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .career-cta {
+            padding: 75px 0;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(2, 6, 23, 0.97),
+                    rgba(15, 23, 42, 0.96)
+                );
+            color: #fff;
+        }
+
+        .career-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .career-cta p {
+            color: #cbd5e1;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background: #020617;
+            color: #94a3b8;
+            padding: 30px 0;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           BACK TO TOP
+        ========================= */
+
+        #backToTop {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 45px;
+            height: 45px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            font-size: 1.1rem;
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+            transition: 0.3s;
+        }
+
+        #backToTop:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 991px) {
+            .navbar-nav {
+                padding-top: 15px;
+            }
+
+            .nav-link {
+                margin: 2px 0;
+            }
+
+            .career-hero {
+                min-height: 430px;
+            }
+
+            .intro-content {
+                padding: 20px 0 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .career-hero {
+                min-height: 500px;
+            }
+
+            .hero-content {
+                padding: 50px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+
+            .career-intro-image {
+                min-height: 280px;
+            }
+
+            .resume-wrapper {
+                padding: 25px;
+            }
+
+            .resume-info {
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="Home.html">
+            <img src="images/25yearsLOGOnew.png" alt="COCSIT Logo">
+            COCSIT
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a href="Home.html" class="nav-link">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="About.html" class="nav-link">About</a>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown">
+
+                        Admissions
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="dropdown-item" href="UG.html">
+                                UG
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="PG.html">
+                                PG
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="placement.html" class="nav-link">
+                        Placements
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="studentlife.html" class="nav-link">
+                        Student Life
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="career.html" class="nav-link active">
+                        Career
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="career-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <i class="bi bi-briefcase-fill"></i>
+                Career Opportunities
+            </div>
+
+            <h1>
+                Build Your <span>Career</span><br>
+                With Confidence
+            </h1>
+
+            <p>
+                Explore career opportunities, develop industry-ready skills,
+                and take the next step toward your professional journey.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#openings" class="btn-primary-custom">
+                    Explore Opportunities
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+
+                <a href="#resume" class="btn-outline-custom">
+                    Submit Resume
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MARQUEE
+========================= -->
+
+<div class="career-marquee">
+
+    <div class="scroll-text">
+        <i class="bi bi-stars me-2"></i>
+        Career at COCSIT – Your gateway to a successful future
+        <span class="mx-5">•</span>
+        Learn • Grow • Prepare • Succeed
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CAREER INTRO
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <img
+                    src="images/carrerwh.jpg"
+                    alt="Career opportunities at COCSIT"
+                    class="career-intro-image">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="intro-content">
+
+                    <div class="section-label text-start">
+                        Career Development
+                    </div>
+
+                    <h2>
+                        Prepare Today for a <span>Better Tomorrow</span>
+                    </h2>
+
+                    <p>
+                        At COCSIT, we believe in empowering students with
+                        the skills and opportunities needed to grow
+                        professionally. Our Placement & Career Guidance Cell
+                        supports students through career guidance, skill
+                        development, internships, and preparation for
+                        recruitment opportunities.
+                    </p>
+
+                    <ul class="career-list">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Regular career guidance sessions</span>
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Internship and career opportunities</span>
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Skill development and certification programs</span>
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Interview and placement preparation</span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CAREER FEATURES
+========================= -->
+
+<section class="section section-light">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Career Support
+            </div>
+
+            <h2>
+                Grow Beyond the Classroom
+            </h2>
+
+            <p>
+                Develop practical skills and prepare yourself for
+                professional opportunities.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-person-workspace"></i>
+                    </div>
+
+                    <h4>
+                        Career Guidance
+                    </h4>
+
+                    <p>
+                        Get guidance and support to understand career
+                        paths and professional opportunities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+
+                    <h4>
+                        Skill Development
+                    </h4>
+
+                    <p>
+                        Strengthen technical and professional skills
+                        required for today's workplace.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+
+                    <h4>
+                        Certifications
+                    </h4>
+
+                    <p>
+                        Explore certification and learning opportunities
+                        to strengthen your professional profile.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h4>
+                        Interview Preparation
+                    </h4>
+
+                    <p>
+                        Prepare for interviews with communication,
+                        aptitude, and professional skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CURRENT OPENINGS
+========================= -->
+
+<section class="section" id="openings">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Opportunities
+            </div>
+
+            <h2>
+                Current Openings
+            </h2>
+
+            <p>
+                Explore the career opportunities currently listed on
+                this page.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Job 1 -->
+
+            <div class="col-md-6">
+
+                <div class="job-card">
+
+                    <div class="job-icon">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+
+                    <h4>
+                        Software Developer Intern
+                    </h4>
+
+                    <div class="job-detail">
+                        <i class="bi bi-building"></i>
+                        <span>Infosys</span>
+                    </div>
+
+                    <div class="job-detail">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Pune</span>
+                    </div>
+
+                    <div class="job-detail">
+                        <i class="bi bi-mortarboard"></i>
+                        <span>MCA, BCA</span>
+                    </div>
+
+                    <a href="#resume" class="btn btn-primary">
+                        Apply Now
+                        <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Job 2 -->
+
+            <div class="col-md-6">
+
+                <div class="job-card">
+
+                    <div class="job-icon">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+
+                    <h4>
+                        Data Analyst
+                    </h4>
+
+                    <div class="job-detail">
+                        <i class="bi bi-building"></i>
+                        <span>TCS</span>
+                    </div>
+
+                    <div class="job-detail">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Mumbai</span>
+                    </div>
+
+                    <div class="job-detail">
+                        <i class="bi bi-mortarboard"></i>
+                        <span>MCA, M.Sc. Computer Science</span>
+                    </div>
+
+                    <a href="#resume" class="btn btn-primary">
+                        Apply Now
+                        <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RESUME SECTION
+========================= -->
+
+<section class="section section-light" id="resume">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Apply With Us
+            </div>
+
+            <h2>
+                Submit Your Resume
+            </h2>
+
+            <p>
+                Share your details and resume for career opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="resume-wrapper">
+
+            <div class="row g-4">
+
+                <!-- Information -->
+
+                <div class="col-lg-5">
+
+                    <div class="resume-info">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-file-earmark-person"></i>
+                        </div>
+
+                        <h3>
+                            Start Your Career Journey
+                        </h3>
+
+                        <p>
+                            Submit your information and resume through
+                            the form. Make sure the details you provide
+                            are accurate.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Complete all required fields
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Provide a valid email address
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Enter your 10-digit mobile number
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Upload your latest resume
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Form -->
+
+                <div class="col-lg-7">
+
+                    <form id="resumeForm">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Enter your full name"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="Enter your email address"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Mobile Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                class="form-control"
+                                placeholder="Enter your 10-digit mobile number"
+                                pattern="[0-9]{10}"
+                                maxlength="10"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Upload Resume
+                            </label>
+
+                            <input
+                                type="file"
+                                class="form-control"
+                                accept=".pdf,.doc,.docx"
+                                required>
+
+                            <small class="text-muted">
+                                Accepted formats: PDF, DOC, DOCX
+                            </small>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn-submit">
+
+                            <i class="bi bi-send me-1"></i>
+                            Submit Application
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="career-cta text-center">
+
+    <div class="container">
+
+        <h2>
+            Your Career Journey Starts Here
+        </h2>
+
+        <p>
+            Keep learning, build your skills, explore opportunities,
+            and take confident steps toward your professional future.
+        </p>
+
+        <a href="#openings" class="btn-primary-custom">
+            Explore Opportunities
+            <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="container text-center">
+
+        <p>
+            &copy;
+            <span id="currentYear"></span>
+            COCSIT. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+    /* =========================
+       DYNAMIC YEAR
+    ========================= */
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 400) {
+            backToTop.style.display = "flex";
+        } else {
+            backToTop.style.display = "none";
+        }
+
+    });
+
+    backToTop.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    /* =========================
+       RESUME FORM
+    ========================= */
+
+    document.getElementById("resumeForm").addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        alert("Your application has been submitted successfully.");
+
+        this.reset();
+
+    });
+
+</script>
+
+</body>
+</html>

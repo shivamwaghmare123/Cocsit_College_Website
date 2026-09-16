@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PG Admissions - COCSIT</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --navy: #020617;
+            --dark: #0f172a;
+            --text: #475569;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(2, 6, 23, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff !important;
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            color: #e2e8f0 !important;
+            font-weight: 500;
+            margin-left: 5px;
+            padding: 9px 13px !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #60a5fa !important;
+            background: rgba(37, 99, 235, 0.12);
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .dropdown-item {
+            border-radius: 8px;
+            padding: 9px 14px;
+            transition: 0.25s;
+        }
+
+        .dropdown-item:hover {
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            min-height: 440px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(2, 6, 23, 0.9),
+                    rgba(15, 23, 42, 0.62)
+                ),
+                url("employees.jpg") center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            color: white;
+            padding: 80px 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            background: rgba(37, 99, 235, 0.18);
+            border: 1px solid rgba(96, 165, 250, 0.4);
+
+            color: #bfdbfe;
+
+            padding: 8px 16px;
+            border-radius: 50px;
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero p {
+            color: #dbeafe;
+            font-size: 1.08rem;
+            max-width: 680px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            color: white;
+            border: none;
+
+            padding: 12px 24px;
+            border-radius: 10px;
+
+            font-weight: 600;
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: white;
+
+            border: 1px solid rgba(255,255,255,0.5);
+
+            padding: 11px 24px;
+            border-radius: 10px;
+
+            font-weight: 600;
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            color: var(--dark);
+
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            max-width: 720px;
+            margin: auto;
+            color: #64748b;
+        }
+
+        /* =========================
+           INTRO CARDS
+        ========================= */
+
+        .intro-card {
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            padding: 35px;
+
+            box-shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+
+            height: 100%;
+
+            transition: 0.3s;
+        }
+
+        .intro-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(37, 99, 235, 0.10);
+        }
+
+        .intro-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eff6ff;
+            color: var(--primary);
+
+            border-radius: 16px;
+
+            font-size: 1.8rem;
+
+            margin-bottom: 20px;
+        }
+
+        .intro-card h3 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           COURSE CARDS
+        ========================= */
+
+        .course-card {
+            height: 100%;
+
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            padding: 30px;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(37, 99, 235, 0.35);
+
+            box-shadow:
+                0 18px 40px rgba(37, 99, 235, 0.12);
+        }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eff6ff;
+            color: var(--primary);
+
+            border-radius: 15px;
+
+            font-size: 1.7rem;
+
+            margin-bottom: 20px;
+        }
+
+        .course-card h4 {
+            color: var(--dark);
+            font-size: 1.15rem;
+            font-weight: 700;
+
+            margin-bottom: 20px;
+
+            min-height: 58px;
+        }
+
+        .course-info {
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+
+        .course-info p {
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+        }
+
+        .course-info strong {
+            color: var(--dark);
+        }
+
+        /* =========================
+           ADMISSION PROCESS
+        ========================= */
+
+        .process-card {
+            position: relative;
+
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            padding: 30px 25px;
+
+            height: 100%;
+
+            transition: 0.3s;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(15, 23, 42, 0.08);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+
+            background: var(--primary);
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: 800;
+            font-size: 0.95rem;
+
+            margin-bottom: 18px;
+        }
+
+        .process-card h5 {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        /* =========================
+           INFORMATION BOX
+        ========================= */
+
+        .info-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #f8fafc
+                );
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 20px;
+
+            padding: 30px;
+        }
+
+        .info-box i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .info-box h4 {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .admission-cta {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(15, 23, 42, 0.98),
+                    rgba(30, 64, 175, 0.96)
+                );
+
+            border-radius: 25px;
+
+            padding: 55px 45px;
+
+            color: white;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admission-cta::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: rgba(96, 165, 250, 0.12);
+
+            right: -70px;
+            top: -70px;
+        }
+
+        .admission-cta h2 {
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .admission-cta p {
+            color: #dbeafe;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 12px;
+
+            color: #e2e8f0;
+        }
+
+        .contact-item i {
+            color: #60a5fa;
+            font-size: 1.2rem;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background: #020617;
+            color: #94a3b8;
+
+            padding: 45px 0 20px;
+        }
+
+        .footer-brand {
+            color: white;
+
+            font-size: 1.5rem;
+            font-weight: 800;
+
+            margin-bottom: 12px;
+        }
+
+        .footer p {
+            font-size: 0.92rem;
+        }
+
+        .footer-divider {
+            border-color: rgba(255,255,255,0.1);
+            margin: 30px 0 20px;
+        }
+
+        .footer-bottom {
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        .fade-up {
+            animation: fadeUp 0.8s ease both;
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .navbar-nav {
+                padding-top: 15px;
+            }
+
+            .nav-link {
+                margin-left: 0;
+            }
+
+            .hero {
+                min-height: 400px;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-content {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .intro-card,
+            .course-card {
+                padding: 25px;
+            }
+
+            .admission-cta {
+                padding: 40px 25px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+
+            .navbar-brand img {
+                height: 36px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="Home.html">
+
+            <img
+                src="images/25yearsLOGOnew.png"
+                alt="COCSIT Logo"
+            >
+
+            COCSIT
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+        >
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a
+                        href="Home.html"
+                        class="nav-link"
+                    >
+                        Home
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        href="About.html"
+                        class="nav-link"
+                    >
+                        About
+                    </a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        class="nav-link dropdown-toggle active"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                    >
+                        Admissions
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="UG.html"
+                            >
+                                UG
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="PG.html"
+                            >
+                                PG
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        href="placement.html"
+                        class="nav-link"
+                    >
+                        Placements
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        href="studentlife.html"
+                        class="nav-link"
+                    >
+                        Student Life
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        href="career.html"
+                        class="nav-link"
+                    >
+                        Career
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        href="contact.html"
+                        class="nav-link"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content fade-up">
+
+            <div class="hero-badge">
+
+                <i class="bi bi-mortarboard-fill"></i>
+
+                Postgraduate Admissions
+
+            </div>
+
+
+            <h1>
+
+                Take Your
+                <span>Knowledge Further</span>
+                With COCSIT
+
+            </h1>
+
+
+            <p>
+
+                Explore postgraduate programs designed to develop
+                advanced knowledge, technical understanding and
+                professional skills in computer science, IT and
+                related domains.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#courses"
+                    class="btn-primary-custom"
+                >
+
+                    <i class="bi bi-book me-2"></i>
+
+                    Explore PG Courses
+
+                </a>
+
+
+                <a
+                    href="#process"
+                    class="btn-outline-custom"
+                >
+
+                    <i class="bi bi-list-check me-2"></i>
+
+                    Admission Process
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PG OVERVIEW
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <div class="section-label">
+                PG Admissions
+            </div>
+
+            <h2>
+                Advance Your Academic Journey
+            </h2>
+
+            <p>
+
+                COCSIT offers postgraduate programs designed to
+                help students build advanced knowledge and develop
+                professional capabilities in their chosen field.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Advanced Learning -->
+
+            <div class="col-lg-4">
+
+                <div class="intro-card fade-up">
+
+                    <div class="intro-icon">
+
+                        <i class="bi bi-mortarboard-fill"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Advanced Learning
+                    </h3>
+
+
+                    <p>
+
+                        Develop deeper subject knowledge through
+                        postgraduate-level academic learning and
+                        specialized study.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Technical Skills -->
+
+            <div class="col-lg-4">
+
+                <div class="intro-card fade-up">
+
+                    <div class="intro-icon">
+
+                        <i class="bi bi-cpu-fill"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Technical Skills
+                    </h3>
+
+
+                    <p>
+
+                        Strengthen your technical understanding and
+                        build skills relevant to computer science,
+                        information technology and related areas.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Professional Growth -->
+
+            <div class="col-lg-4">
+
+                <div class="intro-card fade-up">
+
+                    <div class="intro-icon">
+
+                        <i class="bi bi-graph-up-arrow"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Professional Growth
+                    </h3>
+
+
+                    <p>
+
+                        Prepare for professional opportunities by
+                        developing knowledge, analytical abilities
+                        and practical understanding.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PG COURSES
+========================= -->
+
+<section
+    class="section section-light"
+    id="courses"
+>
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <div class="section-label">
+                Programs
+            </div>
+
+            <h2>
+                Available PG Courses
+            </h2>
+
+            <p>
+
+                Explore the postgraduate programs listed on this
+                admissions page.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- MCA -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+
+                        <i class="bi bi-code-square"></i>
+
+                    </div>
+
+
+                    <h4>
+                        Master of Computer Applications (MCA)
+                    </h4>
+
+
+                    <div class="course-info">
+
+                        <p>
+
+                            <strong>
+                                <i class="bi bi-clock me-2"></i>
+                                Duration:
+                            </strong>
+
+                            2 Years
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                <i class="bi bi-person-check me-2"></i>
+                                Eligibility:
+                            </strong>
+
+                            Any UG degree with Mathematics at
+                            10+2 or UG level
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MSC -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+
+                        <i class="bi bi-cpu"></i>
+
+                    </div>
+
+
+                    <h4>
+                        Master of Science
+                        (M.Sc. - Computer Science)
+                    </h4>
+
+
+                    <div class="course-info">
+
+                        <p>
+
+                            <strong>
+                                <i class="bi bi-clock me-2"></i>
+                                Duration:
+                            </strong>
+
+                            2 Years
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                <i class="bi bi-person-check me-2"></i>
+                                Eligibility:
+                            </strong>
+
+                            B.Sc. in Computer Science / IT
+                            or equivalent
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MCOM -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+
+                        <i class="bi bi-bar-chart-line-fill"></i>
+
+                    </div>
+
+
+                    <h4>
+                        Master of Commerce
+                        (M.Com - Computer Applications)
+                    </h4>
+
+
+                    <div class="course-info">
+
+                        <p>
+
+                            <strong>
+                                <i class="bi bi-clock me-2"></i>
+                                Duration:
+                            </strong>
+
+                            2 Years
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                <i class="bi bi-person-check me-2"></i>
+                                Eligibility:
+                            </strong>
+
+                            B.Com / BBA / Equivalent Degree
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADMISSION PROCESS
+========================= -->
+
+<section
+    class="section"
+    id="process"
+>
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <div class="section-label">
+                How It Works
+            </div>
+
+            <h2>
+                PG Admission Process
+            </h2>
+
+            <p>
+
+                Follow these general steps for postgraduate
+                admission.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Step 01 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="process-card">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+
+                    <h5>
+                        Verify Eligibility
+                    </h5>
+
+
+                    <p>
+
+                        Check the eligibility requirements for
+                        your preferred postgraduate course.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 02 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="process-card">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+
+                    <h5>
+                        Apply
+                    </h5>
+
+
+                    <p>
+
+                        Apply online or collect the admission
+                        form from the college office.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 03 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="process-card">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+
+                    <h5>
+                        Submit Documents
+                    </h5>
+
+
+                    <p>
+
+                        Attach the necessary documents and submit
+                        your completed application.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 04 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="process-card">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+
+                    <h5>
+                        Counseling / Exam
+                    </h5>
+
+
+                    <p>
+
+                        Attend counseling or an entrance examination
+                        if applicable.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 05 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="process-card">
+
+                    <div class="step-number">
+                        05
+                    </div>
+
+
+                    <h5>
+                        Confirm Admission
+                    </h5>
+
+
+                    <p>
+
+                        Complete the prescribed fee payment and
+                        finalize your admission.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INFORMATION
+========================= -->
+
+<section class="section section-light">
+
+    <div class="container">
+
+        <div class="info-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+
+                    <i class="bi bi-info-circle-fill"></i>
+
+                </div>
+
+
+                <div class="col-md-10">
+
+                    <h4>
+                        Important Admission Information
+                    </h4>
+
+
+                    <p class="mb-0">
+
+                        Students should verify the applicable
+                        eligibility requirements, application
+                        instructions and admission schedule before
+                        submitting their application.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT CTA
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="admission-cta">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <div class="section-label text-info">
+                        PG Admissions
+                    </div>
+
+
+                    <h2>
+                        Ready to Take the Next Step?
+                    </h2>
+
+
+                    <p>
+
+                        Contact the college admissions office for
+                        information about postgraduate applications,
+                        eligibility and the admission process.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-5">
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        <span>
+                            pgadmissions@cocsit.com
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        <span>
+                            +91 98765 43211
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-light mt-3"
+                    >
+
+                        <i class="bi bi-arrow-right me-2"></i>
+
+                        Contact College
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div class="footer-brand">
+                    COCSIT
+                </div>
+
+                <p>
+                    College of Computer Science & Information Technology.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end">
+
+                <p>
+                    Postgraduate Admissions
+                </p>
+
+
+                <p>
+
+                    <a
+                        href="Home.html"
+                        class="text-decoration-none text-secondary"
+                    >
+                        Home
+                    </a>
+
+                    &nbsp; | &nbsp;
+
+                    <a
+                        href="About.html"
+                        class="text-decoration-none text-secondary"
+                    >
+                        About
+                    </a>
+
+                    &nbsp; | &nbsp;
+
+                    <a
+                        href="contact.html"
+                        class="text-decoration-none text-secondary"
+                    >
+                        Contact
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr class="footer-divider">
+
+
+        <div class="footer-bottom">
+
+            &copy;
+            <span id="year"></span>
+            COCSIT. All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Dynamic Year -->
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>

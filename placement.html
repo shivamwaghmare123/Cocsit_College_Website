@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Placements - COCSIT</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --navy: #020617;
+            --text: #0f172a;
+            --muted: #64748b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(2, 6, 23, 0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff !important;
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            color: #cbd5e1 !important;
+            font-weight: 500;
+            padding: 9px 13px !important;
+            margin: 0 2px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff !important;
+            background: rgba(37, 99, 235, 0.18);
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .dropdown-menu {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+        }
+
+        .dropdown-item {
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-weight: 500;
+        }
+
+        .dropdown-item:hover {
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .placement-hero {
+            min-height: 440px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(2, 6, 23, 0.92),
+                    rgba(2, 6, 23, 0.65),
+                    rgba(2, 6, 23, 0.35)
+                ),
+                url("placementwh6.jpg") center center / cover no-repeat;
+            color: #ffffff;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 99, 235, 0.18);
+            border: 1px solid rgba(147, 197, 253, 0.35);
+            color: #bfdbfe;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .placement-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .placement-hero h1 span {
+            color: #60a5fa;
+        }
+
+        .placement-hero p {
+            color: #dbeafe;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 11px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           OVERVIEW
+        ========================= */
+
+        .overview-text {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .overview-card {
+            height: 100%;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-7px);
+            border-color: #bfdbfe;
+            box-shadow: 0 18px 35px rgba(37, 99, 235, 0.12);
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .overview-card h4 {
+            font-size: 1.15rem;
+            font-weight: 750;
+            margin-bottom: 10px;
+        }
+
+        .overview-card p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* =========================
+           STUDENT CARDS
+        ========================= */
+
+        .student-card {
+            height: 100%;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+            transition: all 0.35s ease;
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px);
+            border-color: #bfdbfe;
+            box-shadow: 0 20px 45px rgba(37, 99, 235, 0.15);
+        }
+
+        .student-image {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+            background: #e2e8f0;
+        }
+
+        .student-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .student-card:hover .student-image img {
+            transform: scale(1.05);
+        }
+
+        .student-content {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .student-content h4 {
+            font-size: 1.2rem;
+            font-weight: 750;
+            margin-bottom: 8px;
+        }
+
+        .student-content p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .company-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 13px;
+            padding: 7px 13px;
+            border-radius: 50px;
+            background: #eff6ff;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* =========================
+           COMPANY LOGOS
+        ========================= */
+
+        .companies-section {
+            padding: 75px 0;
+            background: #ffffff;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        .logo-wrapper::before,
+        .logo-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .logo-wrapper::before {
+            left: 0;
+            background: linear-gradient(90deg, white, transparent);
+        }
+
+        .logo-wrapper::after {
+            right: 0;
+            background: linear-gradient(-90deg, white, transparent);
+        }
+
+        .logo-track {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            animation: companyScroll 28s linear infinite;
+        }
+
+        .logo-item {
+            width: 180px;
+            height: 100px;
+            margin: 0 15px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            padding: 18px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+        }
+
+        .logo-item img {
+            max-width: 130px;
+            max-height: 65px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        @keyframes companyScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-wrapper:hover .logo-track {
+            animation-play-state: paused;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .placement-cta {
+            padding: 75px 0;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e3a8a
+                );
+            color: white;
+        }
+
+        .placement-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .placement-cta p {
+            color: #cbd5e1;
+            max-width: 680px;
+            margin: 0 auto 25px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 991px) {
+            .navbar-nav {
+                padding-top: 15px;
+            }
+
+            .nav-link {
+                margin: 3px 0;
+            }
+
+            .placement-hero {
+                min-height: 420px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .placement-hero {
+                min-height: 500px;
+                background-position: center;
+            }
+
+            .placement-hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .student-image {
+                height: 300px;
+            }
+
+            .logo-item {
+                width: 150px;
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+
+            .navbar-brand img {
+                width: 42px;
+                height: 42px;
+            }
+
+            .placement-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .student-image {
+                height: 280px;
+            }
+
+            .btn-primary-custom,
+            .btn-outline-custom {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="Home.html">
+            <img src="images/25yearsLOGOnew.png" alt="COCSIT Logo">
+            COCSIT
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a href="Home.html" class="nav-link">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="About.html" class="nav-link">About</a>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+
+                        Admissions
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="dropdown-item" href="UG.html">
+                                <i class="bi bi-mortarboard me-2"></i>
+                                UG
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="PG.html">
+                                <i class="bi bi-book me-2"></i>
+                                PG
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="placement.html" class="nav-link active">
+                        Placements
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="studentlife.html" class="nav-link">
+                        Student Life
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="career.html" class="nav-link">
+                        Career
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="placement-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <i class="bi bi-briefcase-fill"></i>
+                Career & Placement
+            </div>
+
+            <h1>
+                Build Your Career With
+                <span>Confidence</span>
+            </h1>
+
+            <p>
+                Our placement initiatives focus on developing technical,
+                communication, aptitude, coding, and interview skills to
+                help students prepare for professional opportunities.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#placed-students" class="btn btn-primary-custom">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Meet Our Placed Students
+                </a>
+a
+                <a href="#companies" class="btn btn-outline-custom">
+                    <i class="bi bi-building me-2"></i>
+                    Partner Companies
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PLACEMENT OVERVIEW
+========================= -->
+
+<section class="section section-light">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Placement Cell
+            </div>
+
+            <h2>
+                Preparing Students For The Professional World
+            </h2>
+
+            <p>
+                COCSIT has a dedicated Placement Cell that connects
+                students with professional opportunities and supports
+                their preparation for recruitment processes.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="overview-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+
+                    <h4>
+                        Technical Preparation
+                    </h4>
+
+                    <p>
+                        Students can strengthen coding and technical
+                        knowledge through focused preparation and practice.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="overview-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-chat-dots"></i>
+                    </div>
+
+                    <h4>
+                        Communication Skills
+                    </h4>
+
+                    <p>
+                        Communication and presentation skills help students
+                        approach interviews with greater confidence.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="overview-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-person-check"></i>
+                    </div>
+
+                    <h4>
+                        Interview Preparation
+                    </h4>
+
+                    <p>
+                        Aptitude, coding, and interview preparation help
+                        students understand the recruitment process.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PLACED STUDENTS
+========================= -->
+
+<section class="section" id="placed-students">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Student Success
+            </div>
+
+            <h2>
+                Our Placed Students
+            </h2>
+
+            <p>
+                A selection of student placement highlights from COCSIT.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Student 1 -->
+
+            <div class="col-md-4">
+
+                <div class="student-card">
+
+                    <div class="student-image">
+                        <img
+                            src="images/place_student/pl_1.png"
+                            alt="Shivani Gupta"
+                            loading="lazy">
+                    </div>
+
+                    <div class="student-content">
+
+                        <h4>
+                            Shivani Gupta
+                        </h4>
+
+                        <p>
+                            Placement Achievement
+                        </p>
+
+                        <span class="company-badge">
+                            <i class="bi bi-building"></i>
+                            TCS
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Student 2 -->
+
+            <div class="col-md-4">
+
+                <div class="student-card">
+
+                    <div class="student-image">
+                        <img
+                            src="images/place_student/pl_2.jpeg"
+                            alt="Shradha Sharma"
+                            loading="lazy">
+                    </div>
+
+                    <div class="student-content">
+
+                        <h4>
+                            Shradha Sharma
+                        </h4>
+
+                        <p>
+                            Placement Achievement
+                        </p>
+
+                        <span class="company-badge">
+                            <i class="bi bi-building"></i>
+                            Infosys
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Student 3 -->
+
+            <div class="col-md-4">
+
+                <div class="student-card">
+
+                    <div class="student-image">
+                        <img
+                            src="images/place_student/pl_3.png"
+                            alt="Ram Patil"
+                            loading="lazy">
+                    </div>
+
+                    <div class="student-content">
+
+                        <h4>
+                            Ram Patil
+                        </h4>
+
+                        <p>
+                            Placement Achievement
+                        </p>
+
+                        <span class="company-badge">
+                            <i class="bi bi-building"></i>
+                            Wipro
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COMPANY LOGOS
+========================= -->
+
+<section class="companies-section" id="companies">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Industry Connections
+            </div>
+
+            <h2>
+                Companies Featured In Our Placement Highlights
+            </h2>
+
+            <p>
+                Explore the companies represented in the placement
+                information provided by COCSIT.
+            </p>
+
+        </div>
+
+
+        <div class="logo-wrapper">
+
+            <div class="logo-track">
+
+                <!-- Set 1 -->
+
+                <div class="logo-item">
+                    <img src="images/tcs.png" alt="TCS">
+                </div>
+
+                <div class="logo-item">
+                    <img src="images/company_logo's/infosys.png" alt="Infosys">
+                </div>
+
+                <div class="logo-item">
+                    <img src="images/company_logo's/wipro.png" alt="Wipro">
+                </div>
+
+                <div class="logo-item">
+                    <img src="images/company_logo's/capgemini.png" alt="Capgemini">
+                </div>
+
+                <div class="logo-item">
+                    <img src="images/company_logo's/cognizant.png" alt="Cognizant">
+                </div>
+
+                <div class="logo-item">
+                    <img src="images/company_logo's/tech mahindra.jpg" alt="Tech Mahindra">
+                </div>
+
+                <div class="logo-item">
+                    <img src="images/company_logo's/accenture.png" alt="Accenture">
+                </div>
+
+
+                <!-- Duplicate Set -->
+
+                <div class="logo-item">
+                    <img src="tcs.png" alt="TCS">
+                </div>
+
+                <div class="logo-item">
+                    <img src="infosys.png" alt="Infosys">
+                </div>
+
+                <div class="logo-item">
+                    <img src="wipro.png" alt="Wipro">
+                </div>
+
+                <div class="logo-item">
+                    <img src="capgemini.png" alt="Capgemini">
+                </div>
+
+                <div class="logo-item">
+                    <img src="cognizant.png" alt="Cognizant">
+                </div>
+
+                <div class="logo-item">
+                    <img src="tech mahindra.jpg" alt="Tech Mahindra">
+                </div>
+
+                <div class="logo-item">
+                    <img src="accenture.png" alt="Accenture">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="placement-cta">
+
+    <div class="container text-center">
+
+        <h2>
+            Prepare Today. Build Your Future Tomorrow.
+        </h2>
+
+        <p>
+            Develop your technical and professional skills and take
+            confident steps toward your career goals.
+        </p>
+
+        <a href="career.html" class="btn btn-primary-custom">
+            <i class="bi bi-arrow-right-circle me-2"></i>
+            Explore Career Opportunities
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container text-center">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            COCSIT. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>

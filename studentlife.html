@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Life - COCSIT</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --navy: #020617;
+            --text: #0f172a;
+            --muted: #64748b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(2, 6, 23, 0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff !important;
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            color: #cbd5e1 !important;
+            font-weight: 500;
+            padding: 9px 13px !important;
+            margin: 0 2px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff !important;
+            background: rgba(37, 99, 235, 0.18);
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .dropdown-menu {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 15px 35px rgba(15,23,42,0.15);
+        }
+
+        .dropdown-item {
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-weight: 500;
+        }
+
+        .dropdown-item:hover {
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .student-hero {
+            min-height: 450px;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(2,6,23,0.92),
+                    rgba(2,6,23,0.65),
+                    rgba(2,6,23,0.35)
+                ),
+                url("placement-generative-fill.png")
+                center center / cover no-repeat;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            background: rgba(37,99,235,0.18);
+            border: 1px solid rgba(147,197,253,0.35);
+
+            color: #bfdbfe;
+
+            padding: 8px 16px;
+            border-radius: 50px;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+
+            margin-bottom: 18px;
+        }
+
+        .student-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .student-hero h1 span {
+            color: #60a5fa;
+        }
+
+        .student-hero p {
+            color: #dbeafe;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            color: white;
+            border: none;
+
+            padding: 12px 22px;
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+
+            padding: 11px 22px;
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           INTRO SECTION
+        ========================= */
+
+        .intro-text {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .life-card {
+            height: 100%;
+
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            padding: 28px;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 8px 25px rgba(15,23,42,0.05);
+        }
+
+        .life-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #bfdbfe;
+
+            box-shadow:
+                0 18px 35px rgba(37,99,235,0.12);
+        }
+
+        .icon-box {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background: #eff6ff;
+            color: var(--primary);
+
+            font-size: 1.6rem;
+
+            margin-bottom: 18px;
+        }
+
+        .life-card h4 {
+            font-size: 1.2rem;
+            font-weight: 750;
+            margin-bottom: 10px;
+        }
+
+        .life-card p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+
+        /* =========================
+           GALLERY SECTION
+        ========================= */
+
+        .gallery-section {
+            padding: 80px 0;
+        }
+
+        .gallery-section:nth-of-type(even) {
+            background: var(--light);
+        }
+
+        .gallery-card {
+            position: relative;
+
+            height: 280px;
+
+            border-radius: 18px;
+            overflow: hidden;
+
+            background: #e2e8f0;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px rgba(15,23,42,0.08);
+
+            transition: all 0.35s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 40px rgba(37,99,235,0.15);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.5s ease,
+                filter 0.4s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.72);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 22px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(2,6,23,0.85)
+                );
+
+            transform: translateY(8px);
+
+            transition: all 0.35s ease;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .gallery-overlay span {
+            font-size: 0.85rem;
+            color: #bfdbfe;
+        }
+
+        .view-icon {
+            position: absolute;
+
+            top: 18px;
+            right: 18px;
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.9);
+            color: var(--primary);
+
+            opacity: 0;
+
+            transform: scale(0.8);
+
+            transition: all 0.3s ease;
+        }
+
+        .gallery-card:hover .view-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+
+        /* =========================
+           CATEGORY HEADER
+        ========================= */
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            margin-bottom: 35px;
+        }
+
+        .category-icon {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eff6ff;
+            color: var(--primary);
+
+            border-radius: 14px;
+
+            font-size: 1.4rem;
+        }
+
+        .category-header h2 {
+            margin: 0;
+
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .category-header p {
+            margin: 4px 0 0;
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .student-cta {
+            padding: 80px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e3a8a
+                );
+
+            color: white;
+        }
+
+        .student-cta h2 {
+            font-size: clamp(2rem,4vw,3rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .student-cta p {
+            color: #cbd5e1;
+            max-width: 680px;
+
+            margin: 0 auto 25px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================
+           BACK TO TOP
+        ========================= */
+
+        #backToTop {
+            position: fixed;
+
+            bottom: 25px;
+            right: 25px;
+
+            width: 48px;
+            height: 48px;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            background: var(--primary);
+            color: white;
+
+            border: none;
+            border-radius: 50%;
+
+            font-size: 1.2rem;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px rgba(37,99,235,0.3);
+
+            z-index: 999;
+
+            transition: all 0.3s ease;
+        }
+
+        #backToTop:hover {
+            background: var(--primary-dark);
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal-content {
+            background: #020617;
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .modal-title {
+            color: white;
+            font-weight: 700;
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .modal-body img {
+            width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .navbar-nav {
+                padding-top: 15px;
+            }
+
+            .nav-link {
+                margin: 3px 0;
+            }
+
+            .student-hero {
+                min-height: 440px;
+            }
+        }
+
+
+        @media (max-width: 767px) {
+
+            .section,
+            .gallery-section {
+                padding: 60px 0;
+            }
+
+            .student-hero {
+                min-height: 500px;
+            }
+
+            .student-hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .gallery-card {
+                height: 260px;
+            }
+
+            .category-header h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+
+            .navbar-brand img {
+                width: 42px;
+                height: 42px;
+            }
+
+            .student-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-card {
+                height: 240px;
+            }
+
+            .btn-primary-custom,
+            .btn-outline-custom {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="Home.html">
+
+            <img
+                src="images/25yearsLOGOnew.png"
+                alt="COCSIT Logo">
+
+            COCSIT
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a href="Home.html" class="nav-link">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="About.html" class="nav-link">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+
+                        Admissions
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="dropdown-item" href="UG.html">
+                                <i class="bi bi-mortarboard me-2"></i>
+                                UG
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="PG.html">
+                                <i class="bi bi-book me-2"></i>
+                                PG
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item">
+                    <a href="placement.html" class="nav-link">
+                        Placements
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        href="studentlife.html"
+                        class="nav-link active">
+
+                        Student Life
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="career.html" class="nav-link">
+                        Career
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="student-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+
+                <i class="bi bi-stars"></i>
+
+                Campus Experience
+
+            </div>
+
+
+            <h1>
+
+                Experience Life Beyond
+                <span>Academics</span>
+
+            </h1>
+
+
+            <p>
+
+                Student life at COCSIT is filled with events,
+                sports activities, cultural programs, and
+                opportunities that encourage students to
+                explore their interests and talents.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#events"
+                    class="btn btn-primary-custom">
+
+                    <i class="bi bi-calendar-event me-2"></i>
+
+                    Explore Events
+
+                </a>
+
+
+                <a
+                    href="#cultural"
+                    class="btn btn-outline-custom">
+
+                    <i class="bi bi-music-note-beamed me-2"></i>
+
+                    Cultural Activities
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LIFE AT COCSIT
+========================= -->
+
+<section class="section section-light">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Campus Life
+            </div>
+
+            <h2>
+                Life at COCSIT
+            </h2>
+
+            <p>
+                Student life provides opportunities to learn,
+                participate, collaborate, and create memorable
+                experiences beyond the classroom.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="life-card">
+
+                    <div class="icon-box">
+
+                        <i class="bi bi-calendar-event"></i>
+
+                    </div>
+
+                    <h4>
+                        Events & Activities
+                    </h4>
+
+                    <p>
+                        Participate in campus events,
+                        technical activities, celebrations,
+                        and student programs.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="life-card">
+
+                    <div class="icon-box">
+
+                        <i class="bi bi-trophy"></i>
+
+                    </div>
+
+                    <h4>
+                        Sports
+                    </h4>
+
+                    <p>
+                        Students can participate in sports
+                        activities and develop teamwork,
+                        discipline, and competitive spirit.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="life-card">
+
+                    <div class="icon-box">
+
+                        <i class="bi bi-music-note-beamed"></i>
+
+                    </div>
+
+                    <h4>
+                        Cultural Activities
+                    </h4>
+
+                    <p>
+                        Cultural programs give students a
+                        platform to express creativity and
+                        celebrate their talents.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EVENTS
+========================= -->
+
+<section
+    class="gallery-section"
+    id="events">
+
+    <div class="container">
+
+        <div class="category-header">
+
+            <div class="category-icon">
+
+                <i class="bi bi-calendar-event"></i>
+
+            </div>
+
+            <div>
+
+                <h2>
+                    Events
+                </h2>
+
+                <p>
+                    Highlights from campus events and activities
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('sjmr.jpg','Campus Event')">
+
+                    <img
+                        src="images/Event/shivjyanti/sj6.jpg"
+                        alt="Campus Event"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Campus Event
+                        </h5>
+
+                        <span>
+                            Student Activities
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('sj6.jpg','Student Event')">
+
+                    <img
+                        src="images/Event/group.png"
+                        alt="Student Event"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Student Event
+                        </h5>
+
+                        <span>
+                            Campus Activities
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('sj7.jpg','Campus Activity')">
+
+                    <img
+                        src="images/Event/group2.jpg"
+                        alt="Campus Activity"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Campus Activity
+                        </h5>
+
+                        <span>
+                            Student Participation
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('event3.jpg','College Event')">
+
+                    <img
+                        src="images/Event/event3.jpg"
+                        alt="College Event"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            College Event
+                        </h5>
+
+                        <span>
+                            Campus Moments
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('news_28-6-2025_06.jpeg','Campus News Event')">
+
+                    <img
+                        src="images/Event/placement-generative-fill.png"
+                        alt="Campus News Event"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Campus Highlight
+                        </h5>
+
+                        <span>
+                            Student Activities
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('event4.jpg','Student Event')">
+
+                    <img
+                        src="images/Event/event4.jpg"
+                        alt="Student Event"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Student Event
+                        </h5>
+
+                        <span>
+                            Campus Experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SPORTS
+========================= -->
+
+<section
+    class="gallery-section section-light"
+    id="sports">
+
+    <div class="container">
+
+        <div class="category-header">
+
+            <div class="category-icon">
+
+                <i class="bi bi-trophy"></i>
+
+            </div>
+
+            <div>
+
+                <h2>
+                    Sports
+                </h2>
+
+                <p>
+                    Sports participation and memorable moments
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('Center zone kho kho tournament manwat.jfif','Kho Kho Tournament')">
+
+                    <img
+                        src="images/Event/Center zone kho kho tournament manwat.jfif"
+                        alt="Kho Kho Tournament"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Kho Kho Tournament
+                        </h5>
+
+                        <span>
+                            Sports Activity
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('spo1.jpg','Sports Activity')">
+
+                    <img
+                        src="images/Event/spo2.jpg"
+                        alt="Sports Activity"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Sports Activity
+                        </h5>
+
+                        <span>
+                            Student Participation
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('spo3.jpeg','Sports Event')">
+
+                    <img
+                        src="images/Event/spo3.jpeg"
+                        alt="Sports Event"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Sports Event
+                        </h5>
+
+                        <span>
+                            Campus Sports
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CULTURAL ACTIVITIES
+========================= -->
+
+<section
+    class="gallery-section"
+    id="cultural">
+
+    <div class="container">
+
+        <div class="category-header">
+
+            <div class="category-icon">
+
+                <i class="bi bi-music-note-beamed"></i>
+
+            </div>
+
+            <div>
+
+                <h2>
+                    Cultural Activities
+                </h2>
+
+                <p>
+                    Creativity, celebration, and student expression
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('cul1.jpeg','Cultural Activity')">
+
+                    <img
+                        src="images/Event/cul1.jpeg"
+                        alt="Cultural Activity"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Cultural Activity
+                        </h5>
+
+                        <span>
+                            Student Creativity
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('cul2.jpg','Cultural Program')">
+
+                    <img
+                        src="images/Event/cul2.jpg"
+                        alt="Cultural Program"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Cultural Program
+                        </h5>
+
+                        <span>
+                            Campus Celebration
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('cul3.jpg','Cultural Event')">
+
+                    <img
+                        src="images/Event/cul3.jpg"
+                        alt="Cultural Event"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Cultural Event
+                        </h5>
+
+                        <span>
+                            Student Participation
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('cul4.jpg','Cultural Activity')">
+
+                    <img
+                        src="images/Event/cul4.jpg"
+                        alt="Cultural Activity"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Cultural Activity
+                        </h5>
+
+                        <span>
+                            Student Talent
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('cul5.jpg','Cultural Program')">
+
+                    <img
+                        src="images/Event/cul5.jpg"
+                        alt="Cultural Program"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Cultural Program
+                        </h5>
+
+                        <span>
+                            Campus Experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div
+                    class="gallery-card"
+                    onclick="openImage('cul6.jpg','Cultural Event')">
+
+                    <img
+                        src="images/Event/cul6.jpg"
+                        alt="Cultural Event"
+                        loading="lazy">
+
+                    <div class="view-icon">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Cultural Event
+                        </h5>
+
+                        <span>
+                            Student Activities
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="student-cta">
+
+    <div class="container text-center">
+
+        <h2>
+            Make Your College Experience Memorable
+        </h2>
+
+        <p>
+            Learn, participate, explore your interests,
+            and create meaningful experiences throughout
+            your student journey.
+        </p>
+
+        <a
+            href="contact.html"
+            class="btn btn-primary-custom">
+
+            <i class="bi bi-arrow-right-circle me-2"></i>
+
+            Get In Touch
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     IMAGE MODAL
+========================= -->
+
+<div
+    class="modal fade"
+    id="imageModal"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5
+                    class="modal-title"
+                    id="modalTitle">
+
+                    Image Preview
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close">
+                </button>
+
+            </div>
+
+            <div class="modal-body text-center">
+
+                <img
+                    id="modalImage"
+                    src=""
+                    alt="Gallery Preview">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container text-center">
+
+        <p>
+
+            &copy;
+
+            <span id="currentYear"></span>
+
+            COCSIT. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     BACK TO TOP
+========================= -->
+
+<button
+    id="backToTop"
+    title="Back to top"
+    aria-label="Back to top">
+
+    <i class="bi bi-arrow-up"></i>
+
+</button>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+    /* =========================
+       DYNAMIC YEAR
+    ========================= */
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+
+    /* =========================
+       IMAGE MODAL
+    ========================= */
+
+    function openImage(imageSrc, title) {
+
+        document.getElementById("modalImage").src = imageSrc;
+
+        document.getElementById("modalImage").alt = title;
+
+        document.getElementById("modalTitle").textContent = title;
+
+        const modalElement =
+            document.getElementById("imageModal");
+
+        const modal =
+            new bootstrap.Modal(modalElement);
+
+        modal.show();
+    }
+
+
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    const backToTop =
+        document.getElementById("backToTop");
+
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 400) {
+
+            backToTop.style.display = "flex";
+
+        } else {
+
+            backToTop.style.display = "none";
+
+        }
+
+    });
+
+
+    backToTop.addEventListener("click", function() {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

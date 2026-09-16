@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About COCSIT | College of Computer Science & Information Technology</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            background: rgba(5, 15, 35, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 12px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white !important;
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .navbar-brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .nav-link {
+            color: #e2e8f0 !important;
+            font-weight: 500;
+            margin: 0 4px;
+            padding: 9px 13px !important;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: white !important;
+            background: #2563eb;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+
+        /* =====================================================
+           PAGE HERO
+        ===================================================== */
+
+        .page-hero {
+            min-height: 400px;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(2, 6, 23, 0.93),
+                    rgba(15, 23, 42, 0.65)
+                ),
+                url("images/slide-1.jpg") center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .page-hero-content {
+            color: white;
+            max-width: 800px;
+            animation: slideUp 0.9s ease;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 17px;
+            border-radius: 50px;
+            background: rgba(59, 130, 246, 0.18);
+            border: 1px solid rgba(147, 197, 253, 0.45);
+            color: #bfdbfe;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.6rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .page-hero h1 span {
+            color: #60a5fa;
+        }
+
+        .page-hero p {
+            max-width: 650px;
+            color: #dbeafe;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           COMMON SECTION
+        ===================================================== */
+
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-label {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            color: #0f172a;
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .section-text {
+            color: #64748b;
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+
+        /* =====================================================
+           ABOUT INTRO
+        ===================================================== */
+
+        .about-section {
+            background: white;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+        }
+
+        .experience-card {
+            position: absolute;
+            bottom: -25px;
+            right: 25px;
+
+            background: white;
+            padding: 20px 25px;
+            border-radius: 15px;
+
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+        }
+
+        .experience-card h3 {
+            color: #2563eb;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .experience-card p {
+            color: #64748b;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+
+        /* =====================================================
+           VISION / MISSION
+        ===================================================== */
+
+        .vision-section {
+            background: #f1f5f9;
+        }
+
+        .info-card {
+            height: 100%;
+            padding: 35px;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.35s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            border-color: #93c5fd;
+            box-shadow: 0 18px 40px rgba(37, 99, 235, 0.1);
+        }
+
+        .info-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eff6ff;
+            color: #2563eb;
+
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            color: #0f172a;
+            font-weight: 750;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           MISSION LIST
+        ===================================================== */
+
+        .mission-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mission-list li {
+            display: flex;
+            gap: 13px;
+            margin-bottom: 18px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .mission-list i {
+            color: #2563eb;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+
+        /* =====================================================
+           WHY CHOOSE
+        ===================================================== */
+
+        .why-section {
+            background: white;
+        }
+
+        .why-card {
+            background: #f8fafc;
+            border-radius: 18px;
+            padding: 30px;
+            height: 100%;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-7px);
+            background: white;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: #2563eb;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+        }
+
+        .why-card h5 {
+            color: #0f172a;
+            font-weight: 750;
+            margin-bottom: 12px;
+        }
+
+        .why-card p {
+            color: #64748b;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta-section {
+            padding: 80px 0;
+            background: #eff6ff;
+        }
+
+        .cta-box {
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #1e40af
+            );
+
+            border-radius: 25px;
+            padding: 60px 30px;
+            text-align: center;
+            color: white;
+
+            box-shadow: 0 20px 45px rgba(37, 99, 235, 0.22);
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .cta-box p {
+            max-width: 650px;
+            margin: 15px auto 25px;
+            color: #dbeafe;
+            line-height: 1.7;
+        }
+
+        .btn-white {
+            display: inline-block;
+            padding: 13px 27px;
+            background: white;
+            color: #1d4ed8;
+            border-radius: 9px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            color: #1e40af;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+            background: #020617;
+            color: #94a3b8;
+            padding: 65px 0 20px;
+        }
+
+        .footer-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-description {
+            max-width: 360px;
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #60a5fa;
+            padding-left: 5px;
+        }
+
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .footer-contact i {
+            color: #60a5fa;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            background: #1e293b;
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            margin-top: 45px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+
+        /* =====================================================
+           ANIMATION
+        ===================================================== */
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 991px) {
+
+            .about-content {
+                margin-top: 45px;
+            }
+
+            .page-hero {
+                min-height: 350px;
+            }
+
+        }
+
+
+        @media (max-width: 767px) {
+
+            .page-hero {
+                min-height: 330px;
+                text-align: center;
+            }
+
+            .page-hero p {
+                margin: auto;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .experience-card {
+                right: 15px;
+                bottom: -20px;
+            }
+
+            .cta-box h2 {
+                font-size: 2rem;
+            }
+
+            .footer {
+                text-align: center;
+            }
+
+            .footer-description {
+                margin: auto;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-contact li {
+                justify-content: center;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="Home.html">
+
+            <img src="images/25yearsLOGOnew.png"
+                 alt="COCSIT Logo">
+
+            COCSIT
+
+        </a>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a href="Home.html" class="nav-link">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="About.html" class="nav-link active">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown">
+
+                        Admissions
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="dropdown-item"
+                               href="UG.html">
+                                UG Programs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                               href="PG.html">
+                                PG Programs
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item">
+                    <a href="placement.html"
+                       class="nav-link">
+                        Placements
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="studentlife.html"
+                       class="nav-link">
+                        Student Life
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="career.html"
+                       class="nav-link">
+                        Career
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html"
+                       class="nav-link">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     PAGE HERO
+===================================================== -->
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <div class="page-hero-content">
+
+            <span class="hero-label">
+                <i class="bi bi-building"></i>
+                About Our Institution
+            </span>
+
+            <h1>
+                About <span>COCSIT</span>
+            </h1>
+
+            <p>
+                Discover our vision, mission and commitment to
+                providing quality education in Computer Science,
+                Information Technology and related fields.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT COLLEGE
+===================================================== -->
+
+<section class="section about-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <div class="about-image-wrapper">
+
+                    <img src="images/slide-1.jpg"
+                         alt="COCSIT Campus"
+                         class="about-image">
+
+                    <div class="experience-card">
+
+                        <h3>25+</h3>
+
+                        <p>
+                            Years of Excellence
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="about-content">
+
+                    <div class="section-label">
+                        About Our College
+                    </div>
+
+                    <h2 class="section-title">
+                        Empowering Students Through Technology
+                    </h2>
+
+                    <p class="section-text">
+
+                        The College of Computer Science & Information
+                        Technology (COCSIT), Latur, is committed to
+                        providing quality education in Computer Science,
+                        Information Technology and related fields.
+
+                    </p>
+
+                    <p class="section-text">
+
+                        Our approach combines academic learning with
+                        practical exposure, helping students develop
+                        technical knowledge, problem-solving abilities
+                        and the confidence required for a changing
+                        technology landscape.
+
+                    </p>
+
+                    <p class="section-text">
+
+                        We aim to create a learning environment where
+                        students can explore new ideas, develop their
+                        skills and prepare themselves for future
+                        academic and professional opportunities.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISION & MISSION
+===================================================== -->
+
+<section class="section vision-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- Vision -->
+
+            <div class="col-lg-6">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+
+                        <i class="bi bi-eye-fill"></i>
+
+                    </div>
+
+                    <h3>
+                        Our Vision
+                    </h3>
+
+                    <p>
+
+                        To be a center of excellence in Computer Science
+                        and Information Technology, producing globally
+                        competent professionals with strong ethical
+                        values, technical knowledge and innovative skills.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Mission -->
+
+            <div class="col-lg-6">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+
+                        <i class="bi bi-bullseye"></i>
+
+                    </div>
+
+                    <h3>
+                        Our Mission
+                    </h3>
+
+                    <ul class="mission-list">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <span>
+                                Provide quality education that combines
+                                theoretical knowledge with practical
+                                exposure.
+                            </span>
+
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <span>
+                                Encourage research, innovation and
+                                creativity in technology.
+                            </span>
+
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <span>
+                                Promote industry-oriented learning and
+                                professional development.
+                            </span>
+
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <span>
+                                Support holistic development and
+                                leadership qualities among students.
+                            </span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY CHOOSE COCSIT
+===================================================== -->
+
+<section class="section why-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Why Choose COCSIT
+            </div>
+
+            <h2 class="section-title">
+                Learn. Innovate. Grow.
+            </h2>
+
+            <p class="section-text mx-auto"
+               style="max-width: 700px;">
+
+                We focus on creating an environment where students
+                can build strong academic foundations while developing
+                practical and professional skills.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Infrastructure -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="bi bi-laptop"></i>
+
+                    </div>
+
+                    <h5>
+                        Modern Infrastructure
+                    </h5>
+
+                    <p>
+
+                        Technology-enabled learning spaces and
+                        practical environments help students
+                        gain hands-on experience.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Faculty -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="bi bi-people-fill"></i>
+
+                    </div>
+
+                    <h5>
+                        Experienced Faculty
+                    </h5>
+
+                    <p>
+
+                        Faculty members guide students through
+                        academic learning, practical activities
+                        and professional development.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Practical Learning -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="bi bi-code-slash"></i>
+
+                    </div>
+
+                    <h5>
+                        Practical Learning
+                    </h5>
+
+                    <p>
+
+                        Students get opportunities to strengthen
+                        their programming, technical and
+                        problem-solving skills.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Innovation -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="bi bi-lightbulb-fill"></i>
+
+                    </div>
+
+                    <h5>
+                        Innovation & Creativity
+                    </h5>
+
+                    <p>
+
+                        We encourage students to explore ideas,
+                        build projects and approach problems
+                        creatively.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Career -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="bi bi-briefcase-fill"></i>
+
+                    </div>
+
+                    <h5>
+                        Career Development
+                    </h5>
+
+                    <p>
+
+                        Students are encouraged to develop the
+                        technical and professional skills needed
+                        for future career opportunities.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Student Development -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="bi bi-person-check-fill"></i>
+
+                    </div>
+
+                    <h5>
+                        Student Development
+                    </h5>
+
+                    <p>
+
+                        Academic learning is supported by activities
+                        that encourage communication, confidence and
+                        leadership.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Explore Your Future With COCSIT
+            </h2>
+
+            <p>
+
+                Learn more about our academic programs, student life,
+                career opportunities and admission process.
+
+            </p>
+
+            <a href="UG.html" class="btn-white">
+
+                Explore Programs
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+
+            <!-- Brand -->
+
+            <div class="col-lg-4">
+
+                <div class="footer-brand">
+                    COCSIT
+                </div>
+
+                <p class="footer-description">
+
+                    College of Computer Science & Information
+                    Technology, Latur. Empowering students with
+                    knowledge, technology and career-focused
+                    education.
+
+                </p>
+
+                <div class="social-icons mt-4">
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Links -->
+
+            <div class="col-6 col-lg-2">
+
+                <h5 class="footer-title">
+                    Quick Links
+                </h5>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="Home.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="About.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="UG.html">
+                            UG Programs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="PG.html">
+                            PG Programs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="placement.html">
+                            Placements
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Explore -->
+
+            <div class="col-6 col-lg-2">
+
+                <h5 class="footer-title">
+                    Explore
+                </h5>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="studentlife.html">
+                            Student Life
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="career.html">
+                            Career
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+
+            <div class="col-lg-4">
+
+                <h5 class="footer-title">
+                    Contact Us
+                </h5>
+
+                <ul class="footer-contact">
+
+                    <li>
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <span>
+                            Ambajogai Road, Latur - 413531,
+                            Maharashtra, India
+                        </span>
+
+                    </li>
+
+                    <li>
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        <span>
+                            cocsit365@rediffmail.com
+                        </span>
+
+                    </li>
+
+                    <li>
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        <span>
+                            +91 9922367551
+                        </span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p class="mb-0">
+                &copy; <span id="year"></span>
+                COCSIT. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script>
+
+    // Dynamic copyright year
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+
+</body>
+
+</html>
